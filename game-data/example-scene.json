@@ -1,0 +1,32 @@
+{
+  "id": "coffee_shop_0810",
+  "time": "08:10",
+  "location": "Coffee shop",
+  "character": "Aliya",
+  "text": "Aliya checks her phone for the third time and quietly apologizes for the delay.",
+  "choices": [
+    {
+      "id": "rush_aliya",
+      "label": "Ask her to hurry",
+      "effects": {
+        "relationship_aliya": -1
+      },
+      "next": "street_0820"
+    },
+    {
+      "id": "wait_silently",
+      "label": "Wait silently",
+      "next": "street_0820"
+    },
+    {
+      "id": "ask_if_ok",
+      "label": "Ask if everything is okay",
+      "requires": ["knows_aliya_has_problem"],
+      "effects": {
+        "relationship_aliya": 1,
+        "unlock_memory": "aliya_considers_quitting"
+      },
+      "next": "aliya_conversation_0812"
+    }
+  ]
+}

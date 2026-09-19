@@ -74,28 +74,41 @@ The first playable version is planned to include:
 - atmospheric audio and visual transitions;
 - optional AI-assisted free-text dialogue in selected scenes.
 
-## Planned stack
+## Prototype stack
 
-- **Frontend:** Next.js / React / TypeScript
-- **Styling:** Tailwind CSS
-- **Story data:** JSON-based scene graph
-- **State:** client-side state + local persistence
-- **Backend:** lightweight API for AI features if needed
-- **Deployment:** Vercel or another web platform
+The repository now includes a playable prototype with no third-party dependencies:
 
-The exact stack may change during implementation.
+- **Frontend:** HTML / CSS / JavaScript
+- **State:** client-side state + `localStorage`
+- **Narrative engine:** data-driven scene and choice logic in JavaScript
+- **Backend/dev server:** Python standard library (`http.server`)
+- **API:** `GET /api/status`
+
+A React/Next.js version can replace this lightweight prototype during the hackathon without changing the core game mechanics.
 
 ## Repository status
 
-> **Hackathon status:** This repository currently contains the project concept, documentation, architecture proposal, and initial scaffolding. The functional MVP is intended to be developed during the hackathon.
+> **Hackathon status:** This repository contains the project concept plus an early playable technical prototype. The full narrative, visual direction, AI features, and production MVP are intended to be developed during the hackathon.
 
-Current contents:
+Current prototype includes:
 
-- concept documentation;
-- technical architecture draft;
-- game flow draft;
-- sample scene schema;
-- frontend/backend placeholders.
+- working browser UI;
+- branching choices;
+- persistent memory between loops;
+- choices unlocked by discovered facts;
+- local progress persistence;
+- a minimal Python development server and API status endpoint;
+- concept and architecture documentation.
+
+## Run locally
+
+Requirements: Python 3.9+ (no external packages).
+
+```bash
+python backend/server.py
+```
+
+Open `http://127.0.0.1:8000` in your browser.
 
 ## Repository structure
 
@@ -110,8 +123,12 @@ reday/
 │   ├── architecture.md
 │   └── game-flow.md
 ├── frontend/
+│   ├── index.html
+│   ├── styles.css
+│   ├── app.js
 │   └── README.md
 ├── backend/
+│   ├── server.py
 │   └── README.md
 ├── game-data/
 │   └── example-scene.json

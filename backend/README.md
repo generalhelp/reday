@@ -1,11 +1,15 @@
-# Backend
+# Backend prototype
 
-The MVP may use a small backend only where necessary.
+`server.py` is a small dependency-free Python development server.
 
-Potential responsibilities:
+It serves the frontend and exposes a basic health/project endpoint:
 
-- optional AI-assisted dialogue;
-- route summary generation;
-- future analytics or account support.
+```text
+GET /api/status
+```
 
-The core narrative engine is intentionally designed to work without a required backend.
+Run from the repository root:
+
+```bash
+python backend/server.py
+```

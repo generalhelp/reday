@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#090909" />
+  <title>RE:DAY — interactive time-loop story</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="RE:DAY home">RE:<span>DAY</span></a>
+      <div class="status-row">
+        <div class="status-pill">Петля <strong id="loopValue">1</strong></div>
+        <div class="status-pill"><strong id="timeValue">07:00</strong></div>
+        <button class="ghost-button" id="memoryButton" type="button">Память <span id="memoryCount">0</span></button>
+      </div>
+    </header>
+
+    <section class="story-card" aria-live="polite">
+      <div class="scene-kicker" id="sceneKicker">RE:DAY PROTOTYPE</div>
+      <h1 id="sceneTitle">Один и тот же день начинается снова.</h1>
+      <p class="scene-copy" id="sceneText"></p>
+      <div class="choice-list" id="choices"></div>
+      <button class="primary-button hidden" id="nextLoopButton" type="button">Прожить день ещё раз</button>
+    </section>
+
+    <footer>
+      <span>Один день. Бесконечное количество решений.</span>
+      <button id="resetButton" class="text-button" type="button">Сбросить прогресс</button>
+    </footer>
+  </main>
+
+  <dialog id="memoryDialog" class="memory-dialog">
+    <div class="dialog-head">
+      <div>
+        <div class="scene-kicker">ПАМЯТЬ ИГРОКА</div>
+        <h2>То, что мир забывает</h2>
+      </div>
+      <button id="closeMemoryButton" class="icon-button" type="button" aria-label="Закрыть">×</button>
+    </div>
+    <p>Факты сохраняются между петлями и открывают новые варианты действий.</p>
+    <ul id="memoryList" class="memory-list"></ul>
+  </dialog>
+
+  <script src="app.js"></script>
+</body>
+</html>
